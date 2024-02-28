@@ -1,0 +1,63 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2c3e50;
+  --color: #95a5a6;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.progress {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary) var(--progress), white 0deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress::after {
+  width: 235px;
+  height: 235px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #ecf0f1;
+  font-size: 48px;
+  content: attr(data-value) "%";
+  background-image: linear-gradient(to bottom, #ecf0f1, var(--primary));
+  border-radius: 9999px;
+}
+
+.start-progress {
+  background-color: white;
+  border: 0;
+  color: var(--primary);
+  font-weight: bold;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  font-size: 18px;
+}
